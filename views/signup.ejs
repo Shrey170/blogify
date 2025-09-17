@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <title>Signup</title>
+    <style>
+        body {
+            background: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .signup-container {
+            max-width: 450px;
+            margin: 80px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+        .signup-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .signup-header h2 {
+            font-weight: 600;
+            color: #343a40;
+        }
+        .form-text {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+        .btn-primary {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 8px;
+        }
+        .extra-links {
+            text-align: center;
+            margin-top: 15px;
+        }
+        .extra-links a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .extra-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+
+    <div class="signup-container">
+        <div class="signup-header">
+            <h2>Create an Account</h2>
+            <p class="text-muted">Join us today! It’s quick and easy.</p>
+        </div>
+        <form action="/user/signup" method="post">
+            <div class="mb-3">
+                <label for="exampleFullName" class="form-label">Full Name</label>
+                <input type="text" class="form-control" name="fullName" id="exampleFullName" placeholder="Enter your full name" required>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="Enter your email" required>
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Enter a strong password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+        </form>
+        <div class="extra-links">
+            <p>Already have an account? <a href="/user/signin">Sign in</a></p>
+        </div>
+    </div>
+
+    <%- include('./partials/scripts') %>
+</body>
+</html>
